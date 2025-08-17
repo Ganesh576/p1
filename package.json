@@ -1,0 +1,25 @@
+{
+  "name": "microservices-ecommerce-platform",
+  "version": "1.0.0",
+  "description": "Amazon/Flipkart-style microservices e-commerce platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker-compose up --build",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:catalog": "cd services/catalog && npm run dev",
+    "dev:users": "cd services/users && npm run dev",
+    "dev:orders": "cd services/orders && npm run dev",
+    "dev:payments": "cd services/payments && npm run dev",
+    "build": "docker-compose build",
+    "k8s:apply": "kubectl apply -f infra/k8s/",
+    "k8s:delete": "kubectl delete -f infra/k8s/",
+    "test": "echo \"Tests will be implemented for each service\"",
+    "clean": "docker-compose down -v && docker system prune -f"
+  },
+  "keywords": ["microservices", "ecommerce", "docker", "kubernetes", "react", "nodejs"],
+  "author": "E-Commerce Platform Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
